@@ -9,7 +9,7 @@ import {
   CardLink,
 } from "reactstrap";
 
-export default class PromoList extends Component {
+export default class Home extends Component {
   render() {
     return (
       <div>
@@ -20,16 +20,17 @@ export default class PromoList extends Component {
         >
           <img alt="Card" src="https://picsum.photos/300/200" />
           <CardBody>
-            <CardTitle tag="h5">Titulo Producto</CardTitle>
-            <CardText>Tienda Donde se Encuentra</CardText>
+            <CardTitle tag="h5">Card Title</CardTitle>
+            <CardText>This is some text within a card body.</CardText>
           </CardBody>
           <ListGroup flush>
-            <ListGroupItem>Oferta: $900.000</ListGroupItem>
-            <ListGroupItem>Descuento 10%</ListGroupItem>
-            <ListGroupItem>Precio anterior $1'000.000</ListGroupItem>
+            <ListGroupItem>An item</ListGroupItem>
+            <ListGroupItem>A second item</ListGroupItem>
+            <ListGroupItem>And a third item</ListGroupItem>
           </ListGroup>
           <CardBody>
-            <CardLink href="#">Link producto</CardLink>
+            <CardLink href="#">Card Link</CardLink>
+            <CardLink href="#">Another Card Link</CardLink>
           </CardBody>
         </Card>
       </div>
