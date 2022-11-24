@@ -5,7 +5,7 @@ import { Form, Label, Input, FormGroup, Row, Col, Button } from "reactstrap";
 export default class CreateProduct extends Component {
   render() {
     return (
-      <div className="col-md-8 offset-md-2">
+      <div className="col-md-8 offset-md-2 mt-4">
         <div className="card card-body">
           <h4>Agrega Productos</h4>
           <p>Ingresa los datos del producto para añadirlo a encuentra promos</p>

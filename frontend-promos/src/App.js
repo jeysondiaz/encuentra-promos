@@ -9,6 +9,7 @@ import CreateUser from './components/CreateUser';
 import CreateProduct from './components/CreateProduct';
 import PromoList from './components/PromoList';
 import Home from './components/Home';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/tiendas" element={<Tiendas/>} />
           <Route path="/edit/:id" element={<CreateUser/>}/>
           <Route path="/user" element={<CreateUser/>}/>
+          <Route path="/login" element={<Login/>}/>
           <Route path="/addproduct" element={<CreateProduct/>}/>
           <Route path="/listadopromos" element={<PromoList/>}/>      
         </Routes>
