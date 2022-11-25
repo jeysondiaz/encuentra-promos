@@ -6,10 +6,10 @@ import { adminMiddleware } from '@middlewares/adminMiddleware'
 const router = Router()
 
 
-router.get('/categories', authMiddleware, getAllCategories)
-router.post('/categories', authMiddleware, adminMiddleware, createCategory)
-router.get('/categories/:id', authMiddleware, categoryById)
-router.patch('/categories/:id', authMiddleware, adminMiddleware, updateCategory)
-router.delete('/categories/:id', authMiddleware, adminMiddleware, deleteCategory)
+router.get('/', authMiddleware, getAllCategories)
+router.post('/', authMiddleware, adminMiddleware, createCategory)
+router.get('/:id', authMiddleware, categoryById)
+router.patch('/:id', authMiddleware, adminMiddleware, updateCategory)
+router.delete('/:id', authMiddleware, adminMiddleware, deleteCategory)
 
 export default router

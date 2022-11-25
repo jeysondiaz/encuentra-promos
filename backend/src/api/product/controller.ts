@@ -14,7 +14,7 @@ export const createProduct = async (req: Request, res: Response, next: NextFunct
         const { id } = req.body.user
         const { user, ...productData } = req.body
         // Create the product
-        const product = await Product.create({ ...productData, user: id, image: `http://localhost:3000/uploads/${req.file?.filename}` })
+        const product = await Product.create({ ...productData, user: id })
         // Send the response
         res.status(201).json({ 
             error:false,

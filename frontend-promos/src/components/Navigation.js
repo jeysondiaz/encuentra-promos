@@ -1,39 +1,54 @@
-import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default class Navigation extends Component {
-  render() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+export default ({ isLoged }) => {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="/">Encuentra Promos</a>
+        <a className="navbar-brand" href="/">
+          Encuentra Promos
+        </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/listadopromos">Promociones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/tiendas">Tiendas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/addproduct">Agregar Producto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/edit/:id">Registro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/edit/:id" >Login</a>
-            </li>
-
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            {isLoged && [
+              <li key="promos-nav" className="nav-item">
+                <Link className="nav-link active" to="/listadopromos">
+                  Promociones
+                </Link>
+              </li>,
+              <li key="products-nav" className="nav-item">
+                <Link className="nav-link" to="/addproduct">
+                  Agregar Producto
+                </Link>
+              </li>,
+            ]}
+            {!isLoged && [
+              <li key="register-nav" className="nav-item">
+                <Link className="nav-link" to="/register">
+                  Registro
+                </Link>
+              </li>,
+              <li key="login-nav" className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              </li>,
+            ]}
           </ul>
-             
         </div>
       </div>
     </nav>
-  )
-}
-}
+  );
+};

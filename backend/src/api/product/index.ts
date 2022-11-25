@@ -6,12 +6,12 @@ import { authMiddleware } from '@middlewares/authMiddleware'
 const router = Router()
 
 // Main endpoint
-router.post('', uploadFile.single('image'), createProduct)
-router.get('', authMiddleware, getProducts)
+router.get('/', authMiddleware, getProducts)
+router.post('/', authMiddleware, createProduct)
 router.get('/:id', authMiddleware, getProduct)
-router.get('/category/:id', authMiddleware, getProductsByCategory)
-router.get('/commerce/:id', authMiddleware, getProductsByCommerce)
 router.patch('/:id', uploadFile.single('image'), updateProduct)
 router.delete('/:id', authMiddleware, deleteProduct)
+router.get('/category/:id', authMiddleware, getProductsByCategory)
+router.get('/commerce/:id', authMiddleware, getProductsByCommerce)
 
 export default router
